@@ -1,0 +1,17 @@
+{
+  "name": "my-boom",
+  "version": "0.0.1",
+  "description": "A node service cil by my express",
+  "main": "index.js",
+  "bin": {
+    "myBoom": "./bin/myBoom.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "maiff",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.9.0"
+  }
+}
