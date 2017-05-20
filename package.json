@@ -4,7 +4,7 @@
   "description": "A node service cil by my express",
   "main": "index.js",
   "bin": {
-    "myBoom": "./bin/myBoom.js"
+    "boom": "./bin/boom.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,6 +12,12 @@
   "author": "maiff",
   "license": "ISC",
   "dependencies": {
-    "commander": "^2.9.0"
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
+    "download-git-repo": "^1.0.1",
+    "inquirer": "^3.0.6",
+    "ora": "^1.2.0",
+    "read-metadata": "^1.0.0",
+    "user-home": "^2.0.0"
   }
 }
