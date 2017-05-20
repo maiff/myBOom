@@ -80,7 +80,7 @@ function run () {
   } else {
     // checkVersion(function () {
       if (!hasSlash) {
-        use official templates
+        // use official templates
         var officialTemplate = 'maiff/' + template
         downloadAndGenerate(officialTemplate)
       } else {
