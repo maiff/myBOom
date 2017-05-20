@@ -36,6 +36,7 @@ program.on('--help', function () {
 
 program.parse(process.argv)
 var template = program.args[0]
+var hasSlash = template.indexOf('/') > -1
 var rawName = program.args[1]
 if (typeof template === 'undefined' || typeof rawName === 'undefined') {
    console.error(chalk.red('no template-name or project-name given!'))
@@ -78,13 +79,13 @@ function run () {
     }
   } else {
     // checkVersion(function () {
-      // if (!hasSlash) {
-        // use official templates
+      if (!hasSlash) {
+        use official templates
         var officialTemplate = 'maiff/' + template
         downloadAndGenerate(officialTemplate)
-      // } else {
-        // downloadAndGenerate(template)
-      // }
+      } else {
+        downloadAndGenerate(template)
+      }
     // })
   }
 }
