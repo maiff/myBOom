@@ -53,7 +53,8 @@ if (exists(to)) {
     type: 'confirm',
     message: 'Target directory exists. Continue?',
     name: 'ok'
-  }], function (answers) {
+  }])
+  .then(function (answers) {
     if (answers.ok) {
       run()
     }
@@ -63,7 +64,6 @@ if (exists(to)) {
 }
 
 function run () {
-  return
   // check if template is local
   if (isLocalPath(template)) {
     var templatePath = getTemplatePath(template)
@@ -77,15 +77,15 @@ function run () {
       logger.fatal('Local template "%s" not found.', template)
     }
   } else {
-    checkVersion(function () {
-      if (!hasSlash) {
+    // checkVersion(function () {
+      // if (!hasSlash) {
         // use official templates
         var officialTemplate = 'maiff/' + template
         downloadAndGenerate(officialTemplate)
-      } else {
-        downloadAndGenerate(template)
-      }
-    })
+      // } else {
+        // downloadAndGenerate(template)
+      // }
+    // })
   }
 }
 
@@ -105,7 +105,7 @@ function downloadAndGenerate (template) {
     })
   })
 }
-downloadAndGenerate('maiff/myExpressTemplate')
+
 
 
 
